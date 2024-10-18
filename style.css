@@ -18,18 +18,17 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Change this line */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 
 .grid-item {
     background-color: #fff;
-    padding: 10px; /* Reduced padding for mobile view */
+    padding: 20px;
     border: 1px solid #ccc;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    height: 80px; /* Fixed height for mobile view */
 }
 
 .grid-item:hover {
@@ -38,17 +37,22 @@ header {
 
 .gallery {
     display: flex;
-    flex-wrap: wrap; /* Change this line */
-    justify-content: center; /* Change this line */
+    justify-content: space-around; /* Align boys and girls gallery sides */
     margin: 20px;
 }
 
+.boys-gallery, .girls-gallery {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center the images */
+}
+
 .gallery img {
-    width: 100%; /* Change this line */
+    width: 100%; /* Ensure responsive */
     height: auto;
-    max-width: 200px; /* Add this line */
+    max-width: 200px; /* Limit size */
     border-radius: 8px;
-    margin: 10px; /* Add this line for spacing */
+    margin: 10px; /* Space between images */
 }
 
 .modal {
@@ -76,15 +80,4 @@ header {
     float: right;
     font-size: 20px;
     cursor: pointer;
-}
-
-/* Media Query for PC View */
-@media (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* Align boxes in three columns */
-    }
-
-    .grid-item {
-        height: 100px; /* Ensure consistent height for all items in PC view */
-    }
 }
