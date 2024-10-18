@@ -45,18 +45,16 @@ header {
     flex: 1; /* Allow both sections to grow equally */
     max-width: 45%; /* Limit width to maintain space between the two sections */
     padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
 }
 
 .boys-hostel h3, .girls-hostel h3 {
     text-align: center;
 }
 
-.gallery img {
+.boys-hostel img, .girls-hostel img {
     width: 100%; /* Make images responsive */
     height: auto; /* Maintain aspect ratio */
-    max-width: 150px; /* Limit the maximum width of images */
+    max-width: 120px; /* Adjusted maximum width for normal size */
     border-radius: 8px;
     margin: 10px 0; /* Add space between images */
 }
@@ -91,7 +89,7 @@ header {
 
 /* Media Query for PC View */
 @media (min-width: 768px) {
-    .gallery {
+    .boys-girls-gallery {
         flex-direction: row; /* Change to row layout for PC view */
     }
 }
