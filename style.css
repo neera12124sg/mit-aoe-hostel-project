@@ -50,7 +50,8 @@ header {
 .gallery img {
     width: 100%; /* Ensure responsive */
     height: auto;
-    max-width: 200px; /* Limit size */
+    max-width: 210px; /* Increased by 1 cm from 200px */
+    max-height: 210px; /* Added max-height to maintain aspect ratio */
     border-radius: 8px;
     margin: 10px; /* Space between images */
 }
