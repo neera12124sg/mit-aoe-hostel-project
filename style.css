@@ -77,6 +77,15 @@ header {
     }
 }
 
+textarea {
+    width: 100%; /* Make it full width */
+    height: 150px; /* Increase the height for more space */
+    resize: vertical; /* Allow vertical resizing */
+    padding: 10px; /* Add some padding for comfort */
+    border: 1px solid #ccc; /* Maintain border style */
+    border-radius: 5px; /* Rounded corners */
+}
+
 .modal {
     display: none;
     position: fixed;
