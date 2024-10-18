@@ -29,7 +29,7 @@ header {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    height: 80px; /* Smaller height for mobile view */
+    height: 100px; /* Default height for PC view */
 }
 
 .grid-item:hover {
@@ -70,6 +70,15 @@ header {
 
     .grid-item {
         height: 100px; /* Ensure consistent height for all items in PC view */
+    }
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 767px) {
+    .grid-item {
+        height: 60px; /* Smaller height for mobile view */
+        font-size: 14px; /* Adjust font size for better fit */
+        padding: 8px; /* Slightly less padding */
     }
 }
 
