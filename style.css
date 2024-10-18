@@ -18,7 +18,7 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 
@@ -37,14 +37,27 @@ header {
 
 .gallery {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column; /* Stack boys and girls galleries vertically */
     margin: 20px;
 }
 
-.gallery img {
-    width: 200px;
+.boys-gallery, .girls-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap */
+    justify-content: center; /* Center images */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+.boys-gallery img, .girls-gallery img {
+    width: calc(33.33% - 20px); /* 3 images in a row with spacing */
     height: auto;
     border-radius: 8px;
+    margin: 10px; /* Margin for spacing */
+}
+
+.boys-gallery h3, .girls-gallery h3 {
+    width: 100%;
+    text-align: center; /* Center align section titles */
 }
 
 .modal {
@@ -64,7 +77,7 @@ header {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    width: 60%;
+    width: 80%; /* Adjust for mobile */
     max-width: 500px;
 }
 
@@ -72,4 +85,21 @@ header {
     float: right;
     font-size: 20px;
     cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .boys-gallery img, .girls-gallery img {
+        width: calc(50% - 20px); /* 2 images in a row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .boys-gallery img, .girls-gallery img {
+        width: 100%; /* 1 image in a row on extra small screens */
+    }
+
+    .modal-content {
+        width: 95%; /* More width for mobile */
+    }
 }
