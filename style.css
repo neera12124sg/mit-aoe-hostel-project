@@ -18,7 +18,7 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
     gap: 20px;
 }
 
@@ -92,6 +92,10 @@ header {
     .boys-gallery img, .girls-gallery img {
         width: calc(50% - 20px); /* 2 images in a row on small screens */
     }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -101,5 +105,9 @@ header {
 
     .modal-content {
         width: 95%; /* More width for mobile */
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 column for small screens */
     }
 }
