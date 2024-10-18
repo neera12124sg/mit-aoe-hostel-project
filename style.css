@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,7 +19,7 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Change this line */
     gap: 20px;
 }
 
@@ -35,31 +36,21 @@ header {
     background-color: #f2f2f2;
 }
 
-.boys-girls-gallery {
-    display: flex; /* Flexbox layout for side-by-side images */
-    justify-content: space-between; /* Space between the two sections */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Change this line */
+    justify-content: center; /* Change this line */
     margin: 20px;
 }
 
-.boys-hostel, .girls-hostel {
-    flex: 1; /* Allow both sections to grow equally */
-    max-width: 45%; /* Limit width to maintain space between the two sections */
-    padding: 10px;
-}
-
-.boys-hostel h3, .girls-hostel h3 {
-    text-align: center;
-}
-
-.boys-hostel img, .girls-hostel img {
-    width: 100%; /* Make images responsive */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 120px; /* Adjusted maximum width for normal size */
+.gallery img {
+    width: 100%; /* Change this line */
+    height: auto;
+    max-width: 200px; /* Add this line */
     border-radius: 8px;
-    margin: 10px 0; /* Add space between images */
+    margin: 10px; /* Add this line for spacing */
 }
 
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -85,11 +76,4 @@ header {
     float: right;
     font-size: 20px;
     cursor: pointer;
-}
-
-/* Media Query for PC View */
-@media (min-width: 768px) {
-    .boys-girls-gallery {
-        flex-direction: row; /* Change to row layout for PC view */
-    }
 }
