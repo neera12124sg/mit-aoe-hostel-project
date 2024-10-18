@@ -18,7 +18,7 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for PC view */
     gap: 20px;
 }
 
@@ -29,7 +29,7 @@ header {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    height: 120px; /* Fixed height to ensure uniformity */
+    height: 150px; /* Increased height for uniformity */
 }
 
 .grid-item:hover {
@@ -38,13 +38,19 @@ header {
 
 .gallery {
     display: flex;
-    flex-direction: column; /* Stack boys and girls galleries vertically */
+    flex-wrap: wrap; /* Allow images to wrap */
+    justify-content: center; /* Center images */
     margin: 20px;
+}
+
+.gallery h3 {
+    width: 100%;
+    text-align: center; /* Center align section titles */
 }
 
 .boys-gallery, .girls-gallery {
     display: flex;
-    flex-wrap: wrap; /* Allow images to wrap */
+    flex-wrap: wrap; /* Flex to allow wrapping */
     justify-content: center; /* Center images */
     margin: 10px 0; /* Margin for spacing */
 }
@@ -54,11 +60,6 @@ header {
     height: auto;
     border-radius: 8px;
     margin: 10px; /* Margin for spacing */
-}
-
-.boys-gallery h3, .girls-gallery h3 {
-    width: 100%;
-    text-align: center; /* Center align section titles */
 }
 
 .modal {
@@ -88,14 +89,29 @@ header {
     cursor: pointer;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .boys-gallery img, .girls-gallery img {
-        width: calc(50% - 20px); /* 2 images in a row on small screens */
+/* PC View Only */
+@media (min-width: 769px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for PC view */
     }
 
+    .grid-item {
+        height: 150px; /* Height for uniformity on PC */
+    }
+
+    .boys-gallery img, .girls-gallery img {
+        width: calc(33.33% - 20px); /* 3 images in a row */
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+
+    .boys-gallery img, .girls-gallery img {
+        width: 100%; /* 1 image in a row on small screens */
     }
 }
 
