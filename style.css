@@ -18,7 +18,7 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for PC view */
     gap: 20px;
 }
 
@@ -38,16 +38,20 @@ header {
 .gallery {
     display: flex;
     flex-wrap: wrap; /* Allow images to wrap */
-    justify-content: center; /* Center images */
+    justify-content: space-between; /* Space out images */
     margin: 20px;
 }
 
+.gallery h3 {
+    width: 100%; /* Make section headers take full width */
+    text-align: center; /* Center the headers */
+}
+
 .gallery img {
-    width: 100%; /* Responsive image width */
+    width: 30%; /* Set a percentage width for images */
     height: auto;
-    max-width: 200px; /* Limit max width */
     border-radius: 8px;
-    margin: 10px; /* Margin for spacing */
+    margin: 10px 0; /* Margin for spacing */
 }
 
 .modal {
@@ -91,5 +95,10 @@ header {
 
     .modal-content {
         width: 95%; /* More width for mobile */
+    }
+
+    .gallery img {
+        width: 100%; /* Full width for images on mobile */
+        margin: 10px 0; /* Vertical margin for spacing */
     }
 }
