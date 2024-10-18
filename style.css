@@ -7,7 +7,7 @@ body {
 
 header {
     text-align: center;
-    padding: 15px; /* Reduced padding */
+    padding: 20px; /* Keep padding */
     background-color: #004080;
     color: white;
 }
@@ -18,32 +18,13 @@ header {
 
 .grid-container {
     display: grid;
-    gap: 15px; /* Space between boxes */
-}
-
-/* Pyramid Structure for PC View */
-@media (min-width: 769px) {
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr); /* Default to 4 columns */
-    }
-
-    .grid-item:nth-child(1) { grid-column: 1; }
-    .grid-item:nth-child(2) { grid-column: 2; }
-    .grid-item:nth-child(3) { grid-column: 3; }
-    .grid-item:nth-child(4) { grid-column: 4; }
-
-    .grid-item:nth-child(5) { grid-column: 2; }
-    .grid-item:nth-child(6) { grid-column: 3; }
-
-    .grid-item:nth-child(7) { grid-column: 1; }
-    .grid-item:nth-child(8) { grid-column: 2; }
-
-    .grid-item:nth-child(9) { grid-column: 1; }
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for PC view */
+    gap: 20px; /* Space between boxes */
 }
 
 .grid-item {
     background-color: #fff;
-    padding: 15px; /* Reduced padding */
+    padding: 20px; /* Adjusted padding for better size */
     border: 1px solid #ccc;
     text-align: center;
     cursor: pointer;
@@ -88,7 +69,7 @@ header {
 
 .modal-content {
     background-color: white;
-    padding: 15px; /* Reduced padding */
+    padding: 20px; /* Keep padding */
     border-radius: 8px;
     width: 60%;
     max-width: 500px;
