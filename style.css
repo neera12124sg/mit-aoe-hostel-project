@@ -24,11 +24,12 @@ header {
 
 .grid-item {
     background-color: #fff;
-    padding: 20px;
+    padding: 30px; /* Increased padding for larger boxes */
     border: 1px solid #ccc;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    height: 120px; /* Fixed height to ensure uniformity */
 }
 
 .grid-item:hover {
