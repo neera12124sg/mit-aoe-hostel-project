@@ -35,26 +35,33 @@ header {
     background-color: #f2f2f2;
 }
 
-.gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.boys-girls-gallery {
+    display: flex; /* Flexbox layout for side-by-side images */
+    justify-content: space-between; /* Space between the two sections */
     margin: 20px;
 }
 
 .boys-hostel, .girls-hostel {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+    flex: 1; /* Allow both sections to grow equally */
+    max-width: 45%; /* Limit width to maintain space between the two sections */
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.boys-hostel h3, .girls-hostel h3 {
+    text-align: center;
 }
 
 .gallery img {
-    width: 150px;
-    height: auto;
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 150px; /* Limit the maximum width of images */
     border-radius: 8px;
-    margin: 10px;
+    margin: 10px 0; /* Add space between images */
 }
 
+/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -80,4 +87,11 @@ header {
     float: right;
     font-size: 20px;
     cursor: pointer;
+}
+
+/* Media Query for PC View */
+@media (min-width: 768px) {
+    .gallery {
+        flex-direction: row; /* Change to row layout for PC view */
+    }
 }
