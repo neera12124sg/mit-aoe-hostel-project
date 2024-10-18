@@ -5,7 +5,73 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Other styles remain unchanged */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #004080;
+    color: white;
+}
+
+.grid-section {
+    margin: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 100px; /* Fixed height for uniformity in mobile view */
+}
+
+.grid-item:hover {
+    background-color: #f2f2f2;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.boys-gallery, .girls-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    max-width: 210px;
+    max-height: 210px;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+/* Media Query for PC View */
+@media (min-width: 768px) {
+    .gallery img {
+        max-width: 250px; /* Increased for PC view */
+        max-height: 250px; /* Increased for PC view */
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Align boxes in three columns */
+    }
+
+    .grid-item {
+        height: 100px; /* Ensure consistent height for all items */
+    }
+}
 
 .modal {
     display: none;
@@ -32,25 +98,4 @@ body {
     float: right;
     font-size: 20px;
     cursor: pointer;
-}
-
-/* Media Query for PC View */
-@media (min-width: 768px) {
-    textarea {
-        height: 150px; /* Increase height for PC view only */
-    }
-
-    .gallery img {
-        max-width: 250px; /* Increased for PC view */
-        max-height: 250px; /* Increased for PC view */
-    }
-
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* Align boxes in three columns */
-    }
-
-    .grid-item {
-        height: 120px; /* Ensure consistent height for all items */
-        font-size: 18px; /* Adjust font size for better visibility */
-    }
 }
