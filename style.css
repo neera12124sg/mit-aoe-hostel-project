@@ -18,21 +18,18 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust min-width for larger boxes */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 
 .grid-item {
     background-color: #fff;
-    padding: 20px;
+    padding: 10px; /* Adjust padding for smaller size */
     border: 1px solid #ccc;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    height: 120px; /* Fixed height for uniformity */
-    display: flex; /* To vertically align text */
-    align-items: center; /* Center align text vertically */
-    justify-content: center; /* Center align text horizontally */
+    height: 80px; /* Smaller height for mobile view */
 }
 
 .grid-item:hover {
@@ -72,8 +69,7 @@ header {
     }
 
     .grid-item {
-        height: 120px; /* Ensure consistent height for all items */
-        font-size: 18px; /* Adjust font size for better visibility */
+        height: 100px; /* Ensure consistent height for all items in PC view */
     }
 }
 
