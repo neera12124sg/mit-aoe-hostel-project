@@ -18,18 +18,18 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Change this line */
     gap: 20px;
 }
 
 .grid-item {
     background-color: #fff;
-    padding: 10px; /* Adjust padding for smaller size */
+    padding: 10px; /* Reduced padding for mobile view */
     border: 1px solid #ccc;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    height: 80px; /* Smaller height for mobile view */
+    height: 80px; /* Fixed height for mobile view */
 }
 
 .grid-item:hover {
@@ -38,39 +38,17 @@ header {
 
 .gallery {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap; /* Change this line */
+    justify-content: center; /* Change this line */
     margin: 20px;
 }
 
-.boys-gallery, .girls-gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .gallery img {
-    width: 100%;
+    width: 100%; /* Change this line */
     height: auto;
-    max-width: 210px;
-    max-height: 210px;
+    max-width: 200px; /* Add this line */
     border-radius: 8px;
-    margin: 10px;
-}
-
-/* Media Query for PC View */
-@media (min-width: 768px) {
-    .gallery img {
-        max-width: 250px; /* Increased for PC view */
-        max-height: 250px; /* Increased for PC view */
-    }
-    
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* Align boxes in three columns */
-    }
-
-    .grid-item {
-        height: 100px; /* Ensure consistent height for all items in PC view */
-    }
+    margin: 10px; /* Add this line for spacing */
 }
 
 .modal {
@@ -98,4 +76,15 @@ header {
     float: right;
     font-size: 20px;
     cursor: pointer;
+}
+
+/* Media Query for PC View */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Align boxes in three columns */
+    }
+
+    .grid-item {
+        height: 100px; /* Ensure consistent height for all items in PC view */
+    }
 }
