@@ -18,8 +18,28 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for PC view */
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns */
     gap: 20px;
+}
+
+/* Pyramid Structure for PC View */
+@media (min-width: 769px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for first row */
+    }
+
+    .grid-item:nth-child(1) { grid-column: 1; }
+    .grid-item:nth-child(2) { grid-column: 2; }
+    .grid-item:nth-child(3) { grid-column: 3; }
+    .grid-item:nth-child(4) { grid-column: 4; }
+
+    .grid-item:nth-child(5) { grid-column: 2; }
+    .grid-item:nth-child(6) { grid-column: 3; }
+
+    .grid-item:nth-child(7) { grid-column: 1; }
+    .grid-item:nth-child(8) { grid-column: 2; }
+
+    .grid-item:nth-child(9) { grid-column: 1; }
 }
 
 .grid-item {
