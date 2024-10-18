@@ -1,4 +1,3 @@
-
 function openModal(type) {
     const modal = document.getElementById('modal');
     const form = document.getElementById('request-form');
