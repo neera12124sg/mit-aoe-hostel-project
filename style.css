@@ -18,18 +18,17 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for PC view */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
     gap: 20px;
 }
 
 .grid-item {
     background-color: #fff;
-    padding: 30px; /* Increased padding for larger boxes */
+    padding: 20px;
     border: 1px solid #ccc;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    height: 150px; /* Increased height for uniformity */
 }
 
 .grid-item:hover {
@@ -43,21 +42,10 @@ header {
     margin: 20px;
 }
 
-.gallery h3 {
-    width: 100%;
-    text-align: center; /* Center align section titles */
-}
-
-.boys-gallery, .girls-gallery {
-    display: flex;
-    flex-wrap: wrap; /* Flex to allow wrapping */
-    justify-content: center; /* Center images */
-    margin: 10px 0; /* Margin for spacing */
-}
-
-.boys-gallery img, .girls-gallery img {
-    width: calc(33.33% - 20px); /* 3 images in a row with spacing */
+.gallery img {
+    width: 100%; /* Responsive image width */
     height: auto;
+    max-width: 200px; /* Limit max width */
     border-radius: 8px;
     margin: 10px; /* Margin for spacing */
 }
@@ -79,7 +67,7 @@ header {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    width: 80%; /* Adjust for mobile */
+    width: 60%;
     max-width: 500px;
 }
 
@@ -89,42 +77,19 @@ header {
     cursor: pointer;
 }
 
-/* PC View Only */
-@media (min-width: 769px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for PC view */
-    }
-
-    .grid-item {
-        height: 150px; /* Height for uniformity on PC */
-    }
-
-    .boys-gallery img, .girls-gallery img {
-        width: calc(33.33% - 20px); /* 3 images in a row */
-    }
-}
-
-/* Mobile View */
+/* Media Queries */
 @media (max-width: 768px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
     }
-
-    .boys-gallery img, .girls-gallery img {
-        width: 100%; /* 1 image in a row on small screens */
-    }
 }
 
 @media (max-width: 480px) {
-    .boys-gallery img, .girls-gallery img {
-        width: 100%; /* 1 image in a row on extra small screens */
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 column for small screens */
     }
 
     .modal-content {
         width: 95%; /* More width for mobile */
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr; /* 1 column for small screens */
     }
 }
