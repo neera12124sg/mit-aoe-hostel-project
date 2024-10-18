@@ -1,3 +1,4 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,24 +8,25 @@ body {
 
 header {
     text-align: center;
-    padding: 20px; /* Keep padding */
+    padding: 20px;
     background-color: #004080;
     color: white;
 }
 
+/* Grid container for the request boxes */
 .grid-section {
     margin: 20px;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for PC view */
-    gap: 20px; /* Space between boxes */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
 }
 
 .grid-item {
     background-color: #fff;
-    padding: 20px; /* Adjusted padding for better size */
+    padding: 20px;
     border: 1px solid #ccc;
     text-align: center;
     cursor: pointer;
@@ -35,25 +37,7 @@ header {
     background-color: #f2f2f2;
 }
 
-.gallery {
-    display: flex;
-    flex-wrap: wrap; /* Allow images to wrap */
-    justify-content: space-between; /* Space out images */
-    margin: 20px;
-}
-
-.gallery h3 {
-    width: 100%; /* Make section headers take full width */
-    text-align: center; /* Center the headers */
-}
-
-.gallery img {
-    width: 30%; /* Set a percentage width for images */
-    height: auto;
-    border-radius: 8px;
-    margin: 5px 0; /* Reduced margin for spacing */
-}
-
+/* Modal styles */
 .modal {
     display: none;
     position: fixed;
@@ -69,10 +53,40 @@ header {
 
 .modal-content {
     background-color: white;
-    padding: 20px; /* Keep padding */
+    padding: 20px;
     border-radius: 8px;
-    width: 60%;
-    max-width: 500px;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Larger textarea for description */
+.modal textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border-radius: 4px;
+    resize: none;
+}
+
+.modal input[type="text"], .modal select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+/* Submit button */
+.modal button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal button[type="submit"]:hover {
+    background-color: #003060;
 }
 
 .close {
@@ -81,24 +95,17 @@ header {
     cursor: pointer;
 }
 
-/* Media Queries */
+/* Mobile view */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 480px) {
+/* PC view */
+@media (min-width: 769px) {
     .grid-container {
-        grid-template-columns: 1fr; /* 1 column for small screens */
-    }
-
-    .modal-content {
-        width: 95%; /* More width for mobile */
-    }
-
-    .gallery img {
-        width: 100%; /* Full width for images on mobile */
-        margin: 10px 0; /* Vertical margin for spacing */
+        grid-template-columns: repeat(3, 1fr); /* Keep it aligned in 3 columns on larger screens */
+        gap: 20px;
     }
 }
