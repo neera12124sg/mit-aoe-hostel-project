@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,7 +19,7 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Change this line */
     gap: 20px;
 }
 
@@ -37,17 +38,17 @@ header {
 
 .gallery {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: wrap; /* Change this line */
+    justify-content: center; /* Change this line */
     margin: 20px;
 }
 
 .gallery img {
-    width: 100%;
+    width: 100%; /* Change this line */
     height: auto;
-    max-width: 200px;
+    max-width: 200px; /* Add this line */
     border-radius: 8px;
-    margin: 10px;
+    margin: 10px; /* Add this line for spacing */
 }
 
 .modal {
@@ -75,21 +76,4 @@ header {
     float: right;
     font-size: 20px;
     cursor: pointer;
-}
-
-textarea {
-    width: 100%;
-    height: 100px;
-}
-
-@media (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
