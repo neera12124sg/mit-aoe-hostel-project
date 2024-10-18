@@ -18,7 +18,7 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust min-width for larger boxes */
     gap: 20px;
 }
 
@@ -29,6 +29,10 @@ header {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    height: 120px; /* Fixed height for uniformity */
+    display: flex; /* To vertically align text */
+    align-items: center; /* Center align text vertically */
+    justify-content: center; /* Center align text horizontally */
 }
 
 .grid-item:hover {
@@ -65,6 +69,11 @@ header {
     
     .grid-container {
         grid-template-columns: repeat(3, 1fr); /* Align boxes in three columns */
+    }
+
+    .grid-item {
+        height: 120px; /* Ensure consistent height for all items */
+        font-size: 18px; /* Adjust font size for better visibility */
     }
 }
 
